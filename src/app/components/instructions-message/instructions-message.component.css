@@ -1,0 +1,64 @@
+.message {
+  width: calc(100% - 2rem);
+  background-color: var(--light-blue);
+  border: 2px solid var(--blue);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.wrapper h6 {
+  margin-left: 1rem;
+  text-transform: uppercase;
+  color: var(--blue);
+  font-size: 1.25rem;
+}
+
+.top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapper img {
+  height: 2rem;
+  width: 2rem;
+}
+
+.close {
+  outline: none;
+  background-color: transparent;
+  border: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  cursor: pointer;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+}
+
+.close img {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.text {
+  margin-top: 0.5rem;
+  color: var(--darker-blue);
+}
+
+.text p {
+  line-height: 1.25rem;
+}
+
+.close:hover {
+  background-color: rgba(0, 111, 187, 0.25);
+}

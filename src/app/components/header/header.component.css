@@ -3,6 +3,7 @@
   align-items: flex-start;
   height: 10rem;
   flex-direction: column;
+  margin-bottom: 2rem;
 }
 
 .top {

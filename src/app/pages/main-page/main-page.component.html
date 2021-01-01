@@ -1,4 +1,4 @@
 <div class="main-container">
   <app-instructions-message *ngIf="shouldShowInstructions" (onClose)="onClose()"></app-instructions-message> 
-  <app-search-bar></app-search-bar>
+  <app-search-bar (onSearch)="onSearch($event)"></app-search-bar>
 </div>

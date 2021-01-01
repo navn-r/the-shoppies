@@ -8,6 +8,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { MovieCardComponent } from './components/movie-card/movie-card.component';
 import { InstructionsMessageComponent } from './components/instructions-message/instructions-message.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

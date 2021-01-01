@@ -1,9 +1,16 @@
 .message {
   width: calc(100% - 2rem);
-  background-color: var(--light-blue);
-  border: 2px solid var(--blue);
+  background-color: #B7ECEC;
+  border: 2px solid var(--dark-teal);
   border-radius: 10px;
   padding: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0.5rem 0.5rem var(--dark-teal);
+}
+
+*::selection {
+  background-color: var(--dark-teal);
+  color: var(--light-teal-text);
 }
 
 .wrapper {
@@ -15,7 +22,7 @@
 .wrapper h6 {
   margin-left: 1rem;
   text-transform: uppercase;
-  color: var(--blue);
+  color: var(--dark-teal-text);
   font-size: 1.25rem;
 }
 
@@ -52,7 +59,7 @@
 
 .text {
   margin-top: 0.5rem;
-  color: var(--darker-blue);
+  color: var(--dark-teal-text);
 }
 
 .text p {
@@ -60,5 +67,10 @@
 }
 
 .close:hover {
-  background-color: rgba(0, 111, 187, 0.25);
+  background-color: rgba(0, 49, 53, 0.25);
+}
+
+button, img {
+  user-select: none;
+  -moz-user-select: none;
 }

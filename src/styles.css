@@ -70,12 +70,22 @@ table {
   --light-blue: #B4E1FA;
   --darker-blue: #001429;
   --blue: #006FBB;
+  --teal: #47C1BF;
+  --dark-teal: #00848E;
+  --darker-teal: #003135;
+  --dark-teal-text: #405352;
+  --light-teal-text: #E0F5F5;
+  --indigo: #5C6AC4;
+  --light-indigo: #B3BCF5;
+  --lighter-indigo: #F4F5FA;
+
 
   /* FONT VARS */
   --logo: "Myriad Pro Bold SemiCondensed Italic";
   --title: "Comic Sans MS";
   --subtitle: "Times";
   --text: "Shopify Sans Web Medium";
+  --myriad-pro-regular: 'Myriad Pro Regular';
 
   /* SIZING VARS */
 }

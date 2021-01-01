@@ -17,4 +17,8 @@ export class MainPageComponent implements OnInit {
   onClose(): void {
     this.shouldShowInstructions = false;
   }
+
+  onSearch($event: any): void {
+    console.log($event);
+  }
 }

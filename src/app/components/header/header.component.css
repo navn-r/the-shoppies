@@ -1,0 +1,19 @@
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo-text {
+  font-family: var(--logo);
+  letter-spacing: -0.0625rem;
+  margin-top: 0.5rem;
+  font-size: 2rem;
+}
+
+.title-text {
+  font-family: var(--text);
+  font-size: 4.25rem;
+  letter-spacing: -0.25rem;
+}

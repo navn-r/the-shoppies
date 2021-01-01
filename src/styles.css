@@ -29,22 +29,26 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 
@@ -59,9 +63,20 @@ table {
 */
 
   /* COLOR VARS */
+  --bg: #F4F6F8;
 
   /* FONT VARS */
-  --title: 'Myriad Pro Bold SemiCondensed Italic';
+  --logo: "Myriad Pro Bold SemiCondensed Italic";
+  --title: "Comic Sans MS";
+  --subtitle: "Times";
+  --text: "Shopify Sans Web Medium";
 
   /* SIZING VARS */
+}
+
+body {
+	font-family: var(--text);
+	font-weight: 400;
+  color: #212B36;
+  background-color: var(--bg);
 }

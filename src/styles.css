@@ -64,6 +64,10 @@ table {
 
   /* COLOR VARS */
   --bg: #F4F6F8;
+  --lightest: #919EAB;
+  --title-bar: #43467F;
+  --text-color: #212B36;
+  --green: #50B83C;
 
   /* FONT VARS */
   --logo: "Myriad Pro Bold SemiCondensed Italic";
@@ -77,6 +81,6 @@ table {
 body {
 	font-family: var(--text);
 	font-weight: 400;
-  color: #212B36;
+  color: var(--text-color);
   background-color: var(--bg);
 }

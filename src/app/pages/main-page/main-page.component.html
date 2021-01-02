@@ -1,4 +1,18 @@
 <div class="main-container">
-  <app-instructions-message *ngIf="shouldShowInstructions" (onClose)="onClose()"></app-instructions-message> 
-  <app-search-bar (onSearch)="onSearch($event)"></app-search-bar>
+  <app-instructions-message
+    *ngIf="shouldShowInstructions"
+    (onClose)="onClose()"
+  ></app-instructions-message>
+  <app-search-bar
+    (onClear)="onClear()"
+    (onSearch)="onSearch($event)"
+  ></app-search-bar>
+  <div class="search-results" *ngIf="searchResults">
+    <app-movie-card
+      *ngFor="let movie of searchResults.Search; index as i"
+      (onNominate)="onNominate($event)"
+      [movie]="movie"
+      [isNominated]="false"
+    ></app-movie-card>
+  </div>
 </div>

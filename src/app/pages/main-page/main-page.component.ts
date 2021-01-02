@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchResult, Movie } from 'src/app/models/api.model';
+import { MovieService } from 'src/app/services/movie.service';
 
 @Component({
   selector: 'app-main-page',
@@ -7,18 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private movieService: MovieService) { }
 
-  shouldShowInstructions: boolean = true;
+  searchResults: SearchResult | null = null;
 
-  ngOnInit(): void {
-  }
+  shouldShowInstructions: boolean = false;
+
+  ngOnInit(): void {}
 
   onClose(): void {
     this.shouldShowInstructions = false;
   }
 
-  onSearch($event: any): void {
+  async onSearch($event: any): Promise<void> {
+    this.searchResults = await this.movieService.search($event);
+  }
+
+  onNominate($event: any): void {
     console.log($event);
+  }
+
+  onClear(): void {
+    this.searchResults = null;
   }
 }

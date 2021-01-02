@@ -10,7 +10,6 @@
   width: 80%;
   display: flex;
   box-shadow: 0 0.6rem 1.8rem rgba(0,0,0,.1);
-  /* box-shadow: 0 1rem 6rem rgba(0,0,0,.18), 0 0.3rem 1rem rgba(0,0,0,.17); */
   border-radius: 7.5px;
   background-color: white;
 }
@@ -37,19 +36,12 @@
   width: 5rem;
   border: 0;
   background-color: var(--indigo);
-  filter: opacity(0.8);
   border-top-right-radius: 7.5px;
   border-bottom-right-radius: 7.5px;
   display: flex;
   align-items: center;
   justify-content: center;
   outline: none;
-}
-
-.search-button:hover {
-  transition: filter 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-  filter: opacity(1);
-  cursor: pointer;
 }
 
 .search-button img {

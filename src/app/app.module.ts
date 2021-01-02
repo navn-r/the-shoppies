@@ -9,6 +9,7 @@ import { MovieCardComponent } from './components/movie-card/movie-card.component
 import { InstructionsMessageComponent } from './components/instructions-message/instructions-message.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule
   ],
   providers: [],

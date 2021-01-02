@@ -1,4 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 @Component({
   selector: 'app-search-bar',
@@ -10,28 +12,27 @@ export class SearchBarComponent implements OnInit {
   @Output()
   onSearch: EventEmitter<string> = new EventEmitter();
 
-  constructor() { }
+  @Output()
+  onClear: EventEmitter<any> = new EventEmitter();
+
+  @ViewChild('input') input: any;
+
+  constructor() {
+    this.modelChange.pipe(debounceTime(500)).subscribe(() => this.onSearch.emit(this.searchText));
+   }
 
   searchText: string = '';
-  previousText: string = '';
+  modelChange = new Subject<string>();
 
   ngOnInit(): void {
   }
 
   onPressClear(): void {
     this.searchText = '';
+    this.onClear.emit();
   }
 
-  handleKeyUp(e: any): void {
-    if(e.keyCode === 13)
-      this.onPressSearch();
+  onChange(): void {
+    this.modelChange.next();
   }
-
-  onPressSearch(): void {
-    if(this.searchText.trim().length && this.searchText.trim() !== this.previousText) {
-      this.previousText = this.searchText.trim();
-      this.onSearch.emit(this.previousText);
-    }
-  }
-
 }

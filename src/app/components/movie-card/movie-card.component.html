@@ -1,1 +1,31 @@
-<p>movie-card works!</p>
+<div class="movie-card">
+  <div class="poster">
+    <div class="no-poster" *ngIf="movie.Poster === 'N/A'; else poster"></div>
+    <div class="no-poster poster-top" *ngIf="movie.Poster === 'N/A'">
+      <img src="../../../assets/icons/ImageMajor.svg" alt="" />
+    </div>
+    <ng-template #poster>
+      <img [src]="movie.Poster" id="top-img" alt="" />
+      <img [src]="movie.Poster" alt="" />
+    </ng-template>
+    <div class="img-box-shadow"></div>
+  </div>
+  <div class="info-container">
+    <h5>{{ movie.Title }}</h5>
+    <h6>({{ movie.Year }})</h6>
+  </div>
+  <div class="button-container">
+    <div class="movie-button">
+      <button [disabled]="isNominated" (click)="onPressNominate()">
+        <div class="tooltip nominate">Nominate<span *ngIf="isNominated">d</span></div>
+        <img src="../../../assets/icons/MobilePlusMajor.svg" alt="" />
+      </button>
+    </div>
+    <div class="movie-button">
+      <button (click)="onPressIMDb()">
+        <div class="tooltip imdb">IMDb</div>
+        <img src="../../../assets/icons/PromoteMinor.svg" alt="" />
+      </button>
+    </div>
+  </div>
+</div>

@@ -10,6 +10,7 @@ import { InstructionsMessageComponent } from './components/instructions-message/
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NominationsComponent } from './components/nominations/nominations.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     SearchBarComponent,
     MovieCardComponent,
     InstructionsMessageComponent,
-    MainPageComponent
+    MainPageComponent,
+    NominationsComponent
   ],
   imports: [
     BrowserModule,

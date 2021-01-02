@@ -1,13 +1,8 @@
 <div class="main-container">
-  <app-instructions-message
-    *ngIf="shouldShowInstructions"
-    (onClose)="onClose()"
-  ></app-instructions-message>
-  <div class="nominations" style="margin-bottom: 2rem;">
-    <ul>
-      <li *ngFor="let movie of nominations">{{movie.Title}} ({{movie.Year}})</li>
-    </ul>
-  </div>
+  <app-nominations
+    [nominations]="nominations"
+    (onRemoveNomination)="onRemoveNomination($event)"
+  ></app-nominations>
   <app-search-bar
     [loading]="loading"
     (onClear)="onClear()"
@@ -22,3 +17,8 @@
     ></app-movie-card>
   </div>
 </div>
+
+<!-- <app-instructions-message
+    *ngIf="shouldShowInstructions"
+    (onClose)="onClose()"
+  ></app-instructions-message> -->

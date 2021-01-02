@@ -1,1 +1,5 @@
-<p>nominations works!</p>
+<div class="nominations" style="margin-bottom: 2rem;">
+  <ul>
+    <li *ngFor="let movie of nominations">{{movie.Title}} ({{movie.Year}}) <button (click)="onRemove(movie)"></button></li>
+  </ul>
+</div>

@@ -13,7 +13,7 @@ export class MainPageComponent implements OnInit {
 
   searchResults: SearchResult | null = null;
 
-  shouldShowInstructions: boolean = false;
+  // shouldShowInstructions: boolean = false;
 
   loading: boolean = false;
 
@@ -21,12 +21,12 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.nominations  = this.movieService.getNominations();
-    (window as any).nominations = this.nominations;
+    // (window as any).nominations = this.nominations;
   }
 
-  onClose(): void {
-    this.shouldShowInstructions = false;
-  }
+  // onClose(): void {
+  //   this.shouldShowInstructions = false;
+  // }
 
   async onSearch($event: any): Promise<void> {
     this.loading = true;
@@ -36,6 +36,11 @@ export class MainPageComponent implements OnInit {
 
   onNominate($event: any): void {
     this.nominations.push($event);
+    this.movieService.setNominations(this.nominations);
+  }
+
+  onRemoveNomination($event: any): void {
+    this.nominations = this.nominations.filter(n => n.imdbID !== $event);
     this.movieService.setNominations(this.nominations);
   }
 

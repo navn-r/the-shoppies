@@ -11,7 +11,7 @@
     <div class="img-box-shadow"></div>
   </div>
   <div class="info-container">
-    <h5>{{ movie.Title }}</h5>
+    <h5>{{ movie.Title | slice:0:85 }}<span *ngIf="movie.Title.length > 85">...</span></h5>
     <h6>({{ movie.Year }})</h6>
   </div>
   <div class="button-container">

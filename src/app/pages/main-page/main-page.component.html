@@ -20,6 +20,7 @@
         (onNominate)="onNominate($event)"
         [movie]="movie"
         [isNominated]="isNominated(movie)"
+        [isFull]="nominations.length === 5"
       ></app-movie-card>
     </div>
   </div>

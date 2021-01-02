@@ -1,10 +1,21 @@
 <div class="nominations-container">
   <div class="title-container">
-    <h5 class="title">Your nominations</h5>
+    <h5 class="title">Your nominations <span class="length">({{nominations.length}}/5)</span></h5>
   </div>
-  <div class="nominations">
-    <ul>
-      <li *ngFor="let movie of nominations">{{movie.Title}} ({{movie.Year}}) <button (click)="onRemove(movie)"></button></li>
-    </ul>
+  <div class="nominations-outer">
+    <div class="nominations">
+      <div class="nomination" *ngFor="let movie of nominations">
+        <div class="movie-title">
+          <h5>{{movie.Title}}</h5>
+          <h6>({{movie.Year}})</h6>
+        </div>
+        <div class="movie-button">
+          <button (click)="onRemove(movie)">
+            <div class="tooltip">Remove</div>
+            <img src="../../../assets/icons/CancelSmallMinor.svg" alt="" />
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

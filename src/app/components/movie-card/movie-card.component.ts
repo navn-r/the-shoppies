@@ -14,6 +14,9 @@ export class MovieCardComponent implements OnInit {
   @Input()
   isNominated!: boolean;
 
+  @Input()
+  isFull!: boolean;
+
   @Output()
   onNominate: EventEmitter<any> = new EventEmitter();
 

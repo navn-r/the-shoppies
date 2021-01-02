@@ -11,13 +11,18 @@
     <div class="img-box-shadow"></div>
   </div>
   <div class="info-container" [title]="movie.Title + '&nbsp;(' + movie.Year + ')'">
-    <h5>{{ movie.Title | slice:0:75 }}<span *ngIf="movie.Title.length > 75">...</span></h5>
+    <h5>{{ movie.Title | slice:0:70 }}<span *ngIf="movie.Title.length > 70">...</span></h5>
     <h6>({{ movie.Year }})</h6>
   </div>
   <div class="button-container">
     <div class="movie-button">
-      <button [disabled]="isNominated" (click)="onPressNominate()">
-        <div class="tooltip nominate">Nominate<span *ngIf="isNominated">d</span></div>
+      <button [disabled]="isNominated || isFull" (click)="onPressNominate()">
+        <div class="tooltip nominate">
+          <span *ngIf="isNominated else notNominated">Nominated</span>
+          <ng-template #notNominated>
+            Nominat{{ isFull ? "ions are full" : "e"}}
+          </ng-template>
+        </div>
         <img src="../../../assets/icons/MobilePlusMajor.svg" alt="" />
       </button>
     </div>

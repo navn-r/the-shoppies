@@ -1,5 +1,10 @@
-<div class="nominations" style="margin-bottom: 2rem;">
-  <ul>
-    <li *ngFor="let movie of nominations">{{movie.Title}} ({{movie.Year}}) <button (click)="onRemove(movie)"></button></li>
-  </ul>
+<div class="nominations-container">
+  <div class="title-container">
+    <h5 class="title">Your nominations</h5>
+  </div>
+  <div class="nominations">
+    <ul>
+      <li *ngFor="let movie of nominations">{{movie.Title}} ({{movie.Year}}) <button (click)="onRemove(movie)"></button></li>
+    </ul>
+  </div>
 </div>

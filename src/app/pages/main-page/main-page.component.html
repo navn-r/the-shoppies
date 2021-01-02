@@ -1,21 +1,32 @@
 <div class="main-container">
+  <div class="left">
+    <app-search-bar
+      [loading]="loading"
+      (onSearch)="onSearch($event)"
+    ></app-search-bar>
+    <h5
+      class="results-text"
+      *ngIf="searchQuery && searchResults && searchResults.totalResults"
+    >
+      Found <strong>{{ searchResults.totalResults }}</strong> results for <strong>"{{ searchQuery }}"</strong>
+    </h5>
+    <h5 class="results-text" *ngIf="searchResults && searchResults.Response === 'False'" [ngSwitch]="searchResults.Error">
+      <span *ngSwitchCase="'Movie not found!'">No results found for <strong>"{{ searchQuery }}"</strong></span>
+      <span *ngSwitchDefault> <strong>Error:</strong> "{{searchResults.Error}}" for <strong>"{{ searchQuery }}"</strong></span>
+    </h5>
+    <div class="search-results" *ngIf="searchResults && searchResults.Search">
+      <app-movie-card
+        *ngFor="let movie of searchResults.Search; index as i"
+        (onNominate)="onNominate($event)"
+        [movie]="movie"
+        [isNominated]="isNominated(movie)"
+      ></app-movie-card>
+    </div>
+  </div>
   <app-nominations
     [nominations]="nominations"
     (onRemoveNomination)="onRemoveNomination($event)"
   ></app-nominations>
-  <app-search-bar
-    [loading]="loading"
-    (onClear)="onClear()"
-    (onSearch)="onSearch($event)"
-  ></app-search-bar>
-  <div class="search-results" *ngIf="searchResults">
-    <app-movie-card
-      *ngFor="let movie of searchResults.Search; index as i"
-      (onNominate)="onNominate($event)"
-      [movie]="movie"
-      [isNominated]="isNominated(movie)"
-    ></app-movie-card>
-  </div>
 </div>
 
 <!-- <app-instructions-message

@@ -10,8 +10,8 @@
     </ng-template>
     <div class="img-box-shadow"></div>
   </div>
-  <div class="info-container">
-    <h5>{{ movie.Title | slice:0:85 }}<span *ngIf="movie.Title.length > 85">...</span></h5>
+  <div class="info-container" [title]="movie.Title + '&nbsp;(' + movie.Year + ')'">
+    <h5>{{ movie.Title | slice:0:75 }}<span *ngIf="movie.Title.length > 75">...</span></h5>
     <h6>({{ movie.Year }})</h6>
   </div>
   <div class="button-container">

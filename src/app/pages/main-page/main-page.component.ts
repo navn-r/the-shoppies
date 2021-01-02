@@ -5,13 +5,13 @@ import { MovieService } from 'src/app/services/movie.service';
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
-  styleUrls: ['./main-page.component.css']
+  styleUrls: ['./main-page.component.css'],
 })
 export class MainPageComponent implements OnInit {
-
-  constructor(private movieService: MovieService) { }
+  constructor(private movieService: MovieService) {}
 
   searchResults: SearchResult | null = null;
+  searchQuery: string = '';
 
   // shouldShowInstructions: boolean = false;
 
@@ -20,7 +20,7 @@ export class MainPageComponent implements OnInit {
   nominations: Movie[] = [];
 
   ngOnInit(): void {
-    this.nominations  = this.movieService.getNominations();
+    this.nominations = this.movieService.getNominations();
     // (window as any).nominations = this.nominations;
   }
 
@@ -30,7 +30,10 @@ export class MainPageComponent implements OnInit {
 
   async onSearch($event: any): Promise<void> {
     this.loading = true;
-    this.searchResults = await this.movieService.search($event);
+    this.searchResults = !$event.trim().length
+      ? null
+      : await this.movieService.search($event.trim());
+    this.searchQuery = $event;
     this.loading = false;
   }
 
@@ -40,15 +43,11 @@ export class MainPageComponent implements OnInit {
   }
 
   onRemoveNomination($event: any): void {
-    this.nominations = this.nominations.filter(n => n.imdbID !== $event);
+    this.nominations = this.nominations.filter((n) => n.imdbID !== $event);
     this.movieService.setNominations(this.nominations);
   }
 
-  onClear(): void {
-    this.searchResults = null;
-  }
-
   isNominated(movie: Movie): boolean {
-    return this.nominations.map(n => n.imdbID).includes(movie.imdbID);
+    return this.nominations.map((n) => n.imdbID).includes(movie.imdbID);
   }
 }

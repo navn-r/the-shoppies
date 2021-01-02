@@ -1,6 +1,6 @@
-import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-search-bar',
@@ -15,7 +15,8 @@ export class SearchBarComponent implements OnInit {
   @Output()
   onClear: EventEmitter<any> = new EventEmitter();
 
-  @ViewChild('input') input: any;
+  @Input()
+  loading!: boolean;
 
   constructor() {
     this.modelChange.pipe(debounceTime(500)).subscribe(() => this.onSearch.emit(this.searchText));

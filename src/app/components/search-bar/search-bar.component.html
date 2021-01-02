@@ -5,7 +5,10 @@
       <img src="../../../assets/icons/CircleCancelMinor.svg" alt="">
     </button>
     <button class="search-button" title="Search" disabled>
-      <img src="../../../assets/icons/SearchMinor.svg" alt="">
+      <div *ngIf="loading; else notLoading" class="sbl-circ"></div>
+      <ng-template #notLoading>
+        <img src="../../../assets/icons/SearchMinor.svg" alt="">
+      </ng-template>
     </button>
   </div>
 </div>

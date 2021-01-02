@@ -15,6 +15,8 @@ export class MainPageComponent implements OnInit {
 
   shouldShowInstructions: boolean = false;
 
+  loading: boolean = false;
+
   ngOnInit(): void {}
 
   onClose(): void {
@@ -22,7 +24,9 @@ export class MainPageComponent implements OnInit {
   }
 
   async onSearch($event: any): Promise<void> {
+    this.loading = true;
     this.searchResults = await this.movieService.search($event);
+    this.loading = false;
   }
 
   onNominate($event: any): void {

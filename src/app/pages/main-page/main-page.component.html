@@ -4,6 +4,7 @@
     (onClose)="onClose()"
   ></app-instructions-message>
   <app-search-bar
+    [loading]="loading"
     (onClear)="onClear()"
     (onSearch)="onSearch($event)"
   ></app-search-bar>

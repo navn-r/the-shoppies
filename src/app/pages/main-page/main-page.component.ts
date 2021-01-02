@@ -17,7 +17,12 @@ export class MainPageComponent implements OnInit {
 
   loading: boolean = false;
 
-  ngOnInit(): void {}
+  nominations: Movie[] = [];
+
+  ngOnInit(): void {
+    this.nominations  = this.movieService.getNominations();
+    (window as any).nominations = this.nominations;
+  }
 
   onClose(): void {
     this.shouldShowInstructions = false;
@@ -30,10 +35,15 @@ export class MainPageComponent implements OnInit {
   }
 
   onNominate($event: any): void {
-    console.log($event);
+    this.nominations.push($event);
+    this.movieService.setNominations(this.nominations);
   }
 
   onClear(): void {
     this.searchResults = null;
+  }
+
+  isNominated(movie: Movie): boolean {
+    return this.nominations.map(n => n.imdbID).includes(movie.imdbID);
   }
 }

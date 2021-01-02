@@ -3,6 +3,11 @@
     *ngIf="shouldShowInstructions"
     (onClose)="onClose()"
   ></app-instructions-message>
+  <div class="nominations" style="margin-bottom: 2rem;">
+    <ul>
+      <li *ngFor="let movie of nominations">{{movie.Title}} ({{movie.Year}})</li>
+    </ul>
+  </div>
   <app-search-bar
     [loading]="loading"
     (onClear)="onClear()"
@@ -13,7 +18,7 @@
       *ngFor="let movie of searchResults.Search; index as i"
       (onNominate)="onNominate($event)"
       [movie]="movie"
-      [isNominated]="false"
+      [isNominated]="isNominated(movie)"
     ></app-movie-card>
   </div>
 </div>

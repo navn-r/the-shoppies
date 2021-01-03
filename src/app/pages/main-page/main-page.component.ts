@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchResult, Movie } from 'src/app/models/api.model';
+import { ActivatedRoute } from '@angular/router';
+import { SearchResult, Movie, FullMovie } from 'src/app/models/api.model';
 import { MovieService } from 'src/app/services/movie.service';
 
 @Component({
@@ -8,7 +9,16 @@ import { MovieService } from 'src/app/services/movie.service';
   styleUrls: ['./main-page.component.css'],
 })
 export class MainPageComponent implements OnInit {
-  constructor(private movieService: MovieService) {}
+  constructor(
+    private movieService: MovieService,
+    private activatedRoute: ActivatedRoute
+  ) {
+    this.activatedRoute.queryParams.subscribe(async (params) => {
+      const nominations = params['n'];
+      if (nominations && nominations.length)
+        await this.fetchNominations(nominations.split(' '));
+    });
+  }
 
   searchResults: SearchResult | null = null;
   searchQuery: string = '';
@@ -23,7 +33,6 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.nominations = this.movieService.getNominations();
-    // (window as any).nominations = this.nominations;
   }
 
   onClose(): void {
@@ -51,5 +60,26 @@ export class MainPageComponent implements OnInit {
 
   isNominated(movie: Movie): boolean {
     return this.nominations.map((n) => n.imdbID).includes(movie.imdbID);
+  }
+
+  onClear(): void {
+    this.nominations = [];
+    this.movieService.setNominations(this.nominations);
+  }
+
+  async fetchNominations(nominations: string[]): Promise<void> {
+    this.nominations = (
+      await Promise.all(
+        nominations.map((n) => this.movieService.getMovieById(n))
+      )
+    ).map(({ imdbID, Title, Type, Poster, Year }) => ({
+      imdbID,
+      Title,
+      Type,
+      Poster,
+      Year,
+    }));
+    this.movieService.setNominations(this.nominations);
+    window.history.pushState({}, document.title, '/');
   }
 }

@@ -10,6 +10,10 @@
   margin-top: 2rem;
   font-family: var(--myriad-pro-regular);
   font-size: 1.125rem;
+  display: grid;
+  grid-template-columns: auto 10rem;
+  align-items: center;
+  padding-right: 2rem;
 }
 
 app-instructions-message {
@@ -38,6 +42,14 @@ app-instructions-message {
   height: 3rem;
 }
 
+#next-page img {
+  transform: rotate(180deg);
+}
+
+.visible {
+  visibility: visible !important;
+}
+
 .search-message h5 {
   font-size: 1.25rem;
   font-family: var(--semibold);
@@ -49,6 +61,38 @@ app-instructions-message {
   margin-top: 0.25rem;
   font-family: var(--myriad-pro-regular);
   color: var(--lighter);
+}
+
+.page-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.page-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  visibility: hidden;
+  outline: none;
+  border: 0;
+  padding: 0;
+  display: flex;
+  background-color: rgba(179, 188, 245, 0.125);
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-button img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.page-button:hover {
+  cursor: pointer;
+  transition: background-color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  background-color: rgba(179, 188, 245, 0.5);
 }
 
 

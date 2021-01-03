@@ -19,8 +19,8 @@ export class NominationsComponent implements OnInit {
   @Output()
   onClear: EventEmitter<any> = new EventEmitter();
 
-  isExpanded: boolean = true;
-  infoMessage: string = '';
+  isExpanded = true;
+  infoMessage = '';
 
   ngOnInit(): void {}
 
@@ -44,8 +44,14 @@ export class NominationsComponent implements OnInit {
   }
 
   onPressShare(): void {
-    if(this.clipboardService.copyFromContent(
-      `${location.origin}/the-shoppies/?n=${this.nominations.map((n) => n.imdbID).join(' ')}`
-    )) this.showMessage('link copied to clipboard');
+    if (
+      this.clipboardService.copyFromContent(
+        `${location.origin}/the-shoppies/?n=${this.nominations
+          .map((n) => n.imdbID)
+          .join(' ')}`
+      )
+    ) {
+      this.showMessage('link copied to clipboard');
+    }
   }
 }

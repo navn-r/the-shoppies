@@ -20,7 +20,7 @@ export class SearchBarComponent implements OnInit {
       .subscribe(() => this.onSearch.emit(this.searchText));
   }
 
-  searchText: string = '';
+  searchText = '';
   modelChange = new Subject<string>();
 
   ngOnInit(): void {}

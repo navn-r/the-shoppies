@@ -14,20 +14,22 @@ export class MainPageComponent implements OnInit {
     private activatedRoute: ActivatedRoute
   ) {
     this.activatedRoute.queryParams.subscribe(async (params) => {
-      const nominations = params['n'];
-      if (nominations && nominations.length)
+      const nominations = params[`n`];
+      if (nominations && nominations.length) {
         await this.fetchNominations(nominations.split(' '));
+      }
     });
   }
 
   searchResults: SearchResult | null = null;
-  searchQuery: string = '';
+  searchQuery = '';
+  currentPage = 1;
 
   // Choosing to proceed without this message panel, but in case I decide to re-style it,
-  // I'm not deleting the source files
-  shouldShowInstructions: boolean = false;
+  // I'm not deleting the source implementation
+  shouldShowInstructions = false;
 
-  loading: boolean = false;
+  loading = false;
 
   nominations: Movie[] = [];
 
@@ -39,11 +41,21 @@ export class MainPageComponent implements OnInit {
     this.shouldShowInstructions = false;
   }
 
-  async onSearch($event: any): Promise<void> {
+  async onChangePage(pageNum: number): Promise<void> {
+    if (pageNum > 0) {
+      this.currentPage = pageNum;
+      return await this.onSearch(this.searchQuery, pageNum);
+    }
+  }
+
+  async onSearch($event: any, pageNum?: number): Promise<void> {
     this.loading = true;
+    if (this.searchQuery !== $event) {
+      this.currentPage = 1;
+    }
     this.searchResults = !$event.trim().length
       ? null
-      : await this.movieService.search($event.trim());
+      : await this.movieService.search($event.trim(), pageNum);
     this.searchQuery = $event;
     this.loading = false;
   }
@@ -56,6 +68,10 @@ export class MainPageComponent implements OnInit {
   onRemoveNomination($event: any): void {
     this.nominations = this.nominations.filter((n) => n.imdbID !== $event);
     this.movieService.setNominations(this.nominations);
+  }
+
+  getTotalPages(): number {
+    return Math.ceil(+this.searchResults!.totalResults / 10);
   }
 
   isNominated(movie: Movie): boolean {

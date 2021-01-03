@@ -5,6 +5,7 @@ install:
 - npm i -g @angular/cli
 - npm ci
 script:
+- rm -f .env && echo OMDB_API_KEY=$OMDB_API_KEY >> .env # in case we need to change the api key later, we re-generate one on build every time
 - npm run build.prod
 - cp ./dist/shopify-s21-challenge/index.html ./dist/shopify-s21-challenge/404.html
 deploy:

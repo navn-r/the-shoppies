@@ -1,7 +1,7 @@
 # ShopifyS21Challenge
 
 https://polaris.shopify.com/design/colors#navigation
-
+https://medium.com/better-programming/how-to-secure-angular-environment-variables-for-use-in-github-actions-39c07587d590
 
 ---
 

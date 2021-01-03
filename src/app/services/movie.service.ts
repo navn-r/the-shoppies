@@ -1,17 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {SearchResult, MOCK_MOVIES, Movie, FullMovie} from '../models/api.model';
+import { environment } from '../../environments/environment';
+import {
+  SearchResult,
+  Movie,
+  FullMovie,
+} from '../models/api.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MovieService {
+  base_url: string = `http://www.omdbapi.com/?apikey=${environment.OMDB_API_KEY}&type=movie`;
 
-  base_url: string = "http://www.omdbapi.com/?apikey=a77d3b2c&type=movie";
+  nominations: Movie[] = JSON.parse(
+    localStorage.getItem('nominations') || '[]'
+  );
 
-  nominations: Movie[] = JSON.parse(localStorage.getItem('nominations') || '[]');
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getNominations(): Movie[] {
     return this.nominations;
@@ -23,7 +29,9 @@ export class MovieService {
   }
 
   async search(query: string): Promise<SearchResult> {
-    return this.http.get<SearchResult>(`${this.base_url}&s=${query}`).toPromise();
+    return this.http
+      .get<SearchResult>(`${this.base_url}&s=${query}`)
+      .toPromise();
   }
 
   async getMovieById(imdbID: string): Promise<FullMovie> {

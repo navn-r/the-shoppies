@@ -10,6 +10,9 @@
   margin-top: 2rem;
   font-family: var(--myriad-pro-regular);
   font-size: 1.125rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 app-instructions-message {

@@ -8,13 +8,14 @@
       [loading]="loading"
       (onSearch)="onSearch($event)"
     ></app-search-bar>
-    <h5
-      class="results-text"
-      *ngIf="searchQuery && searchResults && searchResults.totalResults"
-    >
-      Found <strong>{{ searchResults.totalResults }}</strong> results for
-      <strong>"{{ searchQuery }}"</strong>
-    </h5>
+    <div class="results-text" *ngIf="searchQuery && searchResults && searchResults.totalResults">
+      <h5>Found <strong>{{ searchResults.totalResults }}</strong> results for <strong>"{{ searchQuery }}"</strong></h5>
+      <div class="page-buttons" *ngIf="+searchResults.totalResults > 10">
+        <button class="page-button" [disabled]="!(currentPage > 1)" (click)="onChangePage(currentPage - 1)"><</button>
+        {{currentPage}}
+        <button class="page-button" [disabled]="!(currentPage < getTotalPages())" (click)="onChangePage(currentPage + 1)">></button>
+      </div>
+    </div>
     <div class="search-message"  *ngIf="searchResults && searchResults.Response === 'False'">
       <img src="assets/icons/SearchMajor.svg" alt="" />
       <h5

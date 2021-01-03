@@ -11,9 +11,13 @@
     <div class="results-text" *ngIf="searchQuery && searchResults && searchResults.totalResults">
       <h5>Found <strong>{{ searchResults.totalResults }}</strong> results for <strong>"{{ searchQuery }}"</strong></h5>
       <div class="page-buttons" *ngIf="+searchResults.totalResults > 10">
-        <button class="page-button" [disabled]="!(currentPage > 1)" (click)="onChangePage(currentPage - 1)"><</button>
-        {{currentPage}}
-        <button class="page-button" [disabled]="!(currentPage < getTotalPages())" (click)="onChangePage(currentPage + 1)">></button>
+        <button class="page-button" [ngClass]="{ 'visible' : currentPage > 1}" (click)="onChangePage(currentPage - 1)">
+          <img src="assets/icons/CircleChevronLeftMinor.svg" alt="">
+        </button>
+        {{currentPage}}/{{getTotalPages()}}
+        <button class="page-button" id="next-page"  [ngClass]="{ 'visible' : currentPage < getTotalPages()}" (click)="onChangePage(currentPage + 1)">
+          <img src="assets/icons/CircleChevronLeftMinor.svg" alt="">
+        </button>
       </div>
     </div>
     <div class="search-message"  *ngIf="searchResults && searchResults.Response === 'False'">

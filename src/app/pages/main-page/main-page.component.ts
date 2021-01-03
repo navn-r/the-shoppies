@@ -25,7 +25,7 @@ export class MainPageComponent implements OnInit {
   currentPage: number = 1;
 
   // Choosing to proceed without this message panel, but in case I decide to re-style it,
-  // I'm not deleting the source files
+  // I'm not deleting the source implementation
   shouldShowInstructions: boolean = false;
 
   loading: boolean = false;

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {SearchResult, MOCK_MOVIES, Movie} from '../models/api.model';
+import {SearchResult, MOCK_MOVIES, Movie, FullMovie} from '../models/api.model';
 
 @Injectable({
   providedIn: 'root'
@@ -24,10 +24,9 @@ export class MovieService {
 
   async search(query: string): Promise<SearchResult> {
     return this.http.get<SearchResult>(`${this.base_url}&s=${query}`).toPromise();
-    // return Promise.resolve({
-    //   Search: MOCK_MOVIES,
-    //   totalResults: MOCK_MOVIES.length + '',
-    //   Response: "True"
-    // })
+  }
+
+  async getMovieById(imdbID: string): Promise<FullMovie> {
+    return this.http.get<FullMovie>(`${this.base_url}&i=${imdbID}`).toPromise();
   }
 }

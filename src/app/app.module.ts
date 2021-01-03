@@ -10,6 +10,7 @@ import { InstructionsMessageComponent } from './components/instructions-message/
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ClipboardModule } from 'ngx-clipboard';
 import { NominationsComponent } from './components/nominations/nominations.component';
 import { SuccessMessageComponent } from './components/success-message/success-message.component';
 
@@ -28,7 +29,8 @@ import { SuccessMessageComponent } from './components/success-message/success-me
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ClipboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

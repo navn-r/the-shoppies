@@ -3,12 +3,12 @@
     <h5 class="title">Your nominations <span *ngIf="nominations.length && nominations.length < 5" class="length">({{nominations.length}}/5)</span></h5>
     <button (click)="onToggle()" class="toggle-display" [ngClass]="{'minimized' : !isExpanded}">
       <div class="tooltip">{{ isExpanded ? "Min" : "Max"}}imize</div>
-      <img src="../../../assets/icons/ChevronUpMinor.svg" alt=""></button>
+      <img src="assets/icons/ChevronUpMinor.svg" alt=""></button>
   </div>
   <div class="nominations-outer" [ngClass]="{'minimized-nominations': !isExpanded}">
     <div class="nominations" [ngClass]="{'empty': !nominations.length}">
       <div id="no-nominations" *ngIf="!nominations.length">
-        <img src="../../../assets/icons/HintMajor.svg" alt="" />
+        <img src="assets/icons/HintMajor.svg" alt="" />
         <h5>No nominations found</h5>
         <h6>try adding a movie</h6>
       </div>
@@ -20,7 +20,7 @@
         <div class="movie-button">
           <button (click)="onRemove(movie)">
             <div class="tooltip">Remove</div>
-            <img src="../../../assets/icons/CancelSmallMinor.svg" alt="" />
+            <img src="assets/icons/CancelSmallMinor.svg" alt="" />
           </button>
         </div>
       </div>

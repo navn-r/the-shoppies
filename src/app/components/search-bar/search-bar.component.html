@@ -2,12 +2,12 @@
   <div class="search-bar">
     <input type="text" [(ngModel)]="searchText" (ngModelChange)="onChange()" [ngClass]="{'no-text': !searchText}" placeholder="type a movie title..."/>
     <button class="clear-button" *ngIf="searchText" (click)="onPressClear()" title="Clear Text">
-      <img src="../../../assets/icons/CircleCancelMinor.svg" alt="">
+      <img src="assets/icons/CircleCancelMinor.svg" alt="">
     </button>
     <button class="search-button" title="Search" disabled>
       <div *ngIf="loading; else notLoading" class="sbl-circ"></div>
       <ng-template #notLoading>
-        <img src="../../../assets/icons/SearchMinor.svg" alt="">
+        <img src="assets/icons/SearchMinor.svg" alt="">
       </ng-template>
     </button>
   </div>

@@ -16,7 +16,7 @@
       <strong>"{{ searchQuery }}"</strong>
     </h5>
     <div class="search-message"  *ngIf="searchResults && searchResults.Response === 'False'">
-      <img src="../../../assets/icons/SearchMajor.svg" alt="" />
+      <img src="assets/icons/SearchMajor.svg" alt="" />
       <h5
         [ngSwitch]="searchResults.Error"
       >
@@ -34,7 +34,7 @@
       <h6>try changing the search term</h6>
     </div>
     <div class="search-message" *ngIf="!searchQuery.trim()">
-      <img src="../../../assets/icons/SearchMajor.svg" alt="" />
+      <img src="assets/icons/SearchMajor.svg" alt="" />
       <h5>Movie Search</h5>
       <h6>nominate your favourites</h6>
     </div>

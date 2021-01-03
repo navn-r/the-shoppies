@@ -1,0 +1,5 @@
+@font-face {
+  font-family: "Shopify Sans Web Medium";
+  src: url("ad26818d844de4534fd78bb03028ca79.woff2") format("woff2"), /* chrome firefox */
+  url("ad26818d844de4534fd78bb03028ca79.ttf") format("truetype") /* chrome firefox opera Safari, Android, iOS 4.2+*/
+}

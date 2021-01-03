@@ -1,0 +1,55 @@
+<div class="main-container">
+  <div class="left">
+    <app-instructions-message
+      *ngIf="shouldShowInstructions"
+      (onClose)="onClose()"
+    ></app-instructions-message>
+    <app-search-bar
+      [loading]="loading"
+      (onSearch)="onSearch($event)"
+    ></app-search-bar>
+    <h5
+      class="results-text"
+      *ngIf="searchQuery && searchResults && searchResults.totalResults"
+    >
+      Found <strong>{{ searchResults.totalResults }}</strong> results for
+      <strong>"{{ searchQuery }}"</strong>
+    </h5>
+    <div class="search-message"  *ngIf="searchResults && searchResults.Response === 'False'">
+      <img src="../../../assets/icons/SearchMajor.svg" alt="" />
+      <h5
+        [ngSwitch]="searchResults.Error"
+      >
+        <span *ngSwitchCase="'Movie not found!'"
+          >No results found for "{{ searchQuery }}"</span
+        >
+        <span *ngSwitchCase="'Too many results.'"
+          >Too many results found for "{{ searchQuery }}"</span
+        >
+        <span *ngSwitchDefault>
+          <strong>Error:</strong> "{{ searchResults.Error }}" for
+          <strong>"{{ searchQuery }}"</strong></span
+        >
+      </h5>
+      <h6>try changing the search term</h6>
+    </div>
+    <div class="search-message" *ngIf="!searchQuery.trim()">
+      <img src="../../../assets/icons/SearchMajor.svg" alt="" />
+      <h5>Movie Search</h5>
+      <h6>nominate your favourites</h6>
+    </div>
+    <div class="search-results" *ngIf="searchResults && searchResults.Search">
+      <app-movie-card
+        *ngFor="let movie of searchResults.Search; index as i"
+        (onNominate)="onNominate($event)"
+        [movie]="movie"
+        [isNominated]="isNominated(movie)"
+        [isFull]="nominations.length === 5"
+      ></app-movie-card>
+    </div>
+  </div>
+  <app-nominations
+    [nominations]="nominations"
+    (onRemoveNomination)="onRemoveNomination($event)"
+  ></app-nominations>
+</div>

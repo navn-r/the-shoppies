@@ -1,45 +1,172 @@
-export interface Rating {
-  Source: string;
-  Value: string;
+export interface Movie {
+  imdbID: string;
+  Title: string;
+  Type: string;
+  Poster: string;
+  Year: string;
 }
 
-export interface Movie {
-  Title: string;
-  Year: string;
-  Rated: string;
-  Released: string;
-  Runtime: string;
-  Genre: string;
-  Director: string;
-  Writer: string;
-  Actors: string;
-  Plot: string;
-  Language: string;
-  Country: string;
-  Awards: string;
-  Poster: string;
-  Ratings: Rating[];
-  Metascore: string;
-  imdbRating: string;
-  imdbVotes: string;
-  imdbID: string;
-  Type: string;
-  DVD: string;
-  BoxOffice: string;
-  Production: string;
-  Website: string;
+export interface SearchResult {
+  Search: Movie[];
+  Error?: string;
+  totalResults: string;
   Response: string;
 }
 
 export const MOCK_MOVIES: Movie[] = [
-  {"Title":"Guardians of the Galaxy Vol. 2","Year":"2017","Rated":"PG-13","Released":"05 May 2017","Runtime":"136 min","Genre":"Action, Adventure, Comedy, Sci-Fi","Director":"James Gunn","Writer":"James Gunn, Dan Abnett (based on the Marvel comics by), Andy Lanning (based on the Marvel comics by), Steve Englehart (Star-Lord created by), Steve Gan (Star-Lord created by), Jim Starlin (Gamora and Drax created by), Stan Lee (Groot created by), Larry Lieber (Groot created by), Jack Kirby (Groot created by), Bill Mantlo (Rocket Raccoon created by), Keith Giffen (Rocket Raccoon created by), Steve Gerber (Howard the Duck created by), Val Mayerik (Howard the Duck created by)","Actors":"Chris Pratt, Zoe Saldana, Dave Bautista, Vin Diesel","Plot":"The Guardians struggle to keep together as a team while dealing with their personal family issues, notably Star-Lord's encounter with his father the ambitious celestial being Ego.","Language":"English","Country":"USA","Awards":"Nominated for 1 Oscar. Another 15 wins & 57 nominations.","Poster":"https://m.media-amazon.com/images/M/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300.jpg","Ratings":[{"Source":"Internet Movie Database","Value":"7.6/10"},{"Source":"Rotten Tomatoes","Value":"85%"},{"Source":"Metacritic","Value":"67/100"}],"Metascore":"67","imdbRating":"7.6","imdbVotes":"562,796","imdbID":"tt3896198","Type":"movie","DVD":"N/A","BoxOffice":"$389,813,101","Production":"Marvel Studios, Walt Disney Pictures","Website":"N/A","Response":"True"},
-  {"Title":"The Lion King","Year":"1994","Rated":"G","Released":"24 Jun 1994","Runtime":"88 min","Genre":"Animation, Adventure, Drama, Family, Musical","Director":"Roger Allers, Rob Minkoff","Writer":"Irene Mecchi (screenplay by), Jonathan Roberts (screenplay by), Linda Woolverton (screenplay by), Burny Mattinson (story), Barry Johnson (story), Lorna Cook (story), Thom Enriquez (story), Andy Gaskill (story), Gary Trousdale (story), Jim Capobianco (story), Kevin Harkey (story), Jorgen Klubien (story), Chris Sanders (story), Tom Sito (story), Larry Leker (story), Joe Ranft (story), Rick Maki (story), Ed Gombert (story), Francis Glebas (story), Mark Kausler (story), J.T. Allen (additional story material), George Scribner (additional story material), Miguel Tejada-Flores (additional story material), Jenny Tripp (additional story material), Bob Tzudiker (additional story material), Christopher Vogler (additional story material), Kirk Wise (additional story material), Noni White (additional story material), Brenda Chapman (story supervisor)","Actors":"Rowan Atkinson, Matthew Broderick, Niketa Calame-Harris, Jim Cummings","Plot":"Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself.","Language":"English, Swahili, Xhosa, Zulu","Country":"USA","Awards":"Won 2 Oscars. Another 35 wins & 35 nominations.","Poster":"https://m.media-amazon.com/images/M/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_SX300.jpg","Ratings":[{"Source":"Internet Movie Database","Value":"8.5/10"},{"Source":"Rotten Tomatoes","Value":"93%"},{"Source":"Metacritic","Value":"88/100"}],"Metascore":"88","imdbRating":"8.5","imdbVotes":"933,574","imdbID":"tt0110357","Type":"movie","DVD":"N/A","BoxOffice":"$422,783,777","Production":"Walt Disney Pictures","Website":"N/A","Response":"True"},
-  {"Title":"Singam","Year":"2010","Rated":"Not Rated","Released":"28 May 2010","Runtime":"160 min","Genre":"Action, Thriller","Director":"Hari","Writer":"Hari","Actors":"Suriya, Anushka Shetty, Prakash Raj, Vivek","Plot":"Honest police officer Durai Singam locks horns with big-time extortionist Mayil Vaaganam.","Language":"Tamil, Tulu, English","Country":"India","Awards":"2 wins & 4 nominations.","Poster":"https://m.media-amazon.com/images/M/MV5BZDgyMjQ1MmEtZGY4YS00YWM1LWJmNTEtNzc2Y2Y2MTgzMjUzXkEyXkFqcGdeQXVyODk1OTg3MTI@._V1_SX300.jpg","Ratings":[{"Source":"Internet Movie Database","Value":"6.8/10"},{"Source":"Rotten Tomatoes","Value":"65%"}],"Metascore":"N/A","imdbRating":"6.8","imdbVotes":"5,098","imdbID":"tt1655607","Type":"movie","DVD":"N/A","BoxOffice":"N/A","Production":"N/A","Website":"N/A","Response":"True"},
-  {"Title":"Iron Man","Year":"2008","Rated":"PG-13","Released":"02 May 2008","Runtime":"126 min","Genre":"Action, Adventure, Sci-Fi","Director":"Jon Favreau","Writer":"Mark Fergus (screenplay), Hawk Ostby (screenplay), Art Marcum (screenplay), Matt Holloway (screenplay), Stan Lee (characters), Don Heck (characters), Larry Lieber (characters), Jack Kirby (characters)","Actors":"Robert Downey Jr., Terrence Howard, Jeff Bridges, Gwyneth Paltrow","Plot":"After being held captive in an Afghan cave, billionaire engineer Tony Stark creates a unique weaponized suit of armor to fight evil.","Language":"English, Persian, Urdu, Arabic, Kurdish, Hindi, Hungarian","Country":"USA, Canada","Awards":"Nominated for 2 Oscars. Another 22 wins & 70 nominations.","Poster":"https://m.media-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_SX300.jpg","Ratings":[{"Source":"Internet Movie Database","Value":"7.9/10"},{"Source":"Rotten Tomatoes","Value":"94%"},{"Source":"Metacritic","Value":"79/100"}],"Metascore":"79","imdbRating":"7.9","imdbVotes":"930,966","imdbID":"tt0371746","Type":"movie","DVD":"N/A","BoxOffice":"N/A","Production":"Marvel Enterprises, Paramount","Website":"N/A","Response":"True"},
-  {"Title":"BlackMan","Year":"1989","Rated":"X","Released":"N/A","Runtime":"N/A","Genre":"Adult","Director":"Duck Dumont","Writer":"Duck Dumont","Actors":"Jeannie Pepper, Purple Passion, Ebony Ayes, Shantele","Plot":"N/A","Language":"English","Country":"USA","Awards":"N/A","Poster":"N/A","Ratings":[],"Metascore":"N/A","imdbRating":"N/A","imdbVotes":"N/A","imdbID":"tt0177547","Type":"movie","DVD":"N/A","BoxOffice":"N/A","Production":"N/A","Website":"N/A","Response":"True"},
-  {"Title":"Bigil","Year":"2019","Rated":"Not Rated","Released":"24 Oct 2019","Runtime":"179 min","Genre":"Action, Drama, Sport","Director":"Atlee Kumar","Writer":"Atlee Kumar (story), Ramanagirivasan (screenplay), Atlee Kumar (dialogue), Ramanagirivasan (dialogue), Atlee Kumar (Story)","Actors":"Joseph Vijay, Nayanthara, Jackie Shroff, Vivek","Plot":"A former football player struggles to train a women's football team and avenge his father's death.","Language":"Tamil, Telugu","Country":"India","Awards":"1 win.","Poster":"https://m.media-amazon.com/images/M/MV5BYTIyNWM5YzgtZDhkNC00MmZjLWIxODItYTViZmVmZjlkMDE3XkEyXkFqcGdeQXVyOTk3NTc2MzE@._V1_SX300.jpg","Ratings":[{"Source":"Internet Movie Database","Value":"6.7/10"}],"Metascore":"N/A","imdbRating":"6.7","imdbVotes":"10,868","imdbID":"tt9260636","Type":"movie","DVD":"N/A","BoxOffice":"N/A","Production":"N/A","Website":"N/A","Response":"True"},
-  {"Title":"Star Wars: Episode IV - A New Hope","Year":"1977","Rated":"PG","Released":"25 May 1977","Runtime":"121 min","Genre":"Action, Adventure, Fantasy, Sci-Fi","Director":"George Lucas","Writer":"George Lucas","Actors":"Mark Hamill, Harrison Ford, Carrie Fisher, Peter Cushing","Plot":"Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader.","Language":"English","Country":"USA","Awards":"Won 6 Oscars. Another 52 wins & 29 nominations.","Poster":"https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg","Ratings":[{"Source":"Internet Movie Database","Value":"8.6/10"},{"Source":"Rotten Tomatoes","Value":"92%"},{"Source":"Metacritic","Value":"90/100"}],"Metascore":"90","imdbRating":"8.6","imdbVotes":"1,219,582","imdbID":"tt0076759","Type":"movie","DVD":"N/A","BoxOffice":"$460,998,507","Production":"Lucasfilm Ltd.","Website":"N/A","Response":"True"},
-  {"Title":"B","Year":"2015","Rated":"N/A","Released":"20 Sep 2015","Runtime":"80 min","Genre":"Crime, Drama","Director":"David Ilundain","Writer":"Jordi Casanovas (play), David Ilundain (adaptation)","Actors":"Pedro Casablanc, Manolo Solo, Pedro Civera, Eduardo Recabarren","Plot":"July 15, 2013 Luis Barcenas - Old party treasurer was transferred from prison to National Court to testify. Previously, he had denied everything. Today he will tell the truth.","Language":"Spanish","Country":"Spain","Awards":"8 wins & 9 nominations.","Poster":"https://m.media-amazon.com/images/M/MV5BZDhlZmRlNmMtYmMyYy00Zjg0LWI0ZmQtYzNiNWM5YTU4YTI3XkEyXkFqcGdeQXVyNjQ0NjY3MDY@._V1_SX300.jpg","Ratings":[{"Source":"Internet Movie Database","Value":"6.7/10"}],"Metascore":"N/A","imdbRating":"6.7","imdbVotes":"495","imdbID":"tt4679438","Type":"movie","DVD":"N/A","BoxOffice":"N/A","Production":"N/A","Website":"N/A","Response":"True"},
-  {"Title":"C","Year":"2011–","Rated":"TV-14","Released":"15 Apr 2011","Runtime":"23 min","Genre":"Animation, Action, Fantasy, Mystery, Sci-Fi","Director":"N/A","Writer":"N/A","Actors":"Terri Doty, Todd Haberkorn, Bryan Massey, Brina Palencia","Plot":"The Japanese government was rescued from the brink of financial collapse by the Sovereign Wealth Fund. For its citizens, however, life has not improved, and unemployment, crime, suicide, ...","Language":"Japanese","Country":"Japan","Awards":"N/A","Poster":"https://m.media-amazon.com/images/M/MV5BOTM5Njc5ZTYtYzk1OS00ZmIxLTlkOTAtZmE3MjBiNjQ4MWQyXkEyXkFqcGdeQXVyNjIyNDgwMzM@._V1_SX300.jpg","Ratings":[{"Source":"Internet Movie Database","Value":"6.7/10"}],"Metascore":"N/A","imdbRating":"6.7","imdbVotes":"383","imdbID":"tt1893520","Type":"series","totalSeasons":"N/A","Response":"True"},
-  {"Title":"Tenacious D in the Pick of Destiny","Year":"2006","Rated":"R","Released":"22 Nov 2006","Runtime":"93 min","Genre":"Adventure, Comedy, Music, Musical","Director":"Liam Lynch","Writer":"Jack Black, Kyle Gass, Liam Lynch","Actors":"Jack Black, Kyle Gass, JR Reed, Ronnie James Dio","Plot":"To become the greatest band of all time, two slacker, wannabe-rockers set out on a quest to steal a legendary guitar pick that gives its holders incredible guitar skills, from a maximum security Rock and Roll museum.","Language":"English","Country":"USA, Germany","Awards":"2 nominations.","Poster":"https://m.media-amazon.com/images/M/MV5BMTUyMDA3OTc4MV5BMl5BanBnXkFtZTcwNzE5NjkzMQ@@._V1_SX300.jpg","Ratings":[{"Source":"Internet Movie Database","Value":"6.8/10"},{"Source":"Rotten Tomatoes","Value":"52%"},{"Source":"Metacritic","Value":"55/100"}],"Metascore":"55","imdbRating":"6.8","imdbVotes":"101,204","imdbID":"tt0365830","Type":"movie","DVD":"N/A","BoxOffice":"$8,334,575","Production":"Red Hour Films","Website":"N/A","Response":"True"}
+  {
+    Title: 'Batman Begins',
+    Year: '2005',
+    imdbID: 'tt0372784',
+    Type: 'movie',
+    Poster:
+      'https://m.media-amazon.com/images/M/MV5BOTY4YjI2N2MtYmFlMC00ZjcyLTg3YjEtMDQyM2ZjYzQ5YWFkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg',
+  },
+  {
+    Title: 'Batman v Superman: Dawn of Justice',
+    Year: '2016',
+    imdbID: 'tt2975590',
+    Type: 'movie',
+    Poster:
+      'https://m.media-amazon.com/images/M/MV5BYThjYzcyYzItNTVjNy00NDk0LTgwMWQtYjMwNmNlNWJhMzMyXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg',
+  },
+  {
+    Title: 'Batman',
+    Year: '1989',
+    imdbID: 'tt0096895',
+    Type: 'movie',
+    Poster:
+      'https://m.media-amazon.com/images/M/MV5BMTYwNjAyODIyMF5BMl5BanBnXkFtZTYwNDMwMDk2._V1_SX300.jpg',
+  },
+  {
+    Title: 'Batman Returns',
+    Year: '1992',
+    imdbID: 'tt0103776',
+    Type: 'movie',
+    Poster:
+      'https://m.media-amazon.com/images/M/MV5BOGZmYzVkMmItM2NiOS00MDI3LWI4ZWQtMTg0YWZkODRkMmViXkEyXkFqcGdeQXVyODY0NzcxNw@@._V1_SX300.jpg',
+  },
+  {
+    Title: 'Batman Forever',
+    Year: '1995',
+    imdbID: 'tt0112462',
+    Type: 'movie',
+    Poster:
+      'https://m.media-amazon.com/images/M/MV5BNDdjYmFiYWEtYzBhZS00YTZkLWFlODgtY2I5MDE0NzZmMDljXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg',
+  },
+  {
+    Title: 'Batman & Robin',
+    Year: '1997',
+    imdbID: 'tt0118688',
+    Type: 'movie',
+    Poster:
+      'https://m.media-amazon.com/images/M/MV5BMGQ5YTM1NmMtYmIxYy00N2VmLWJhZTYtN2EwYTY3MWFhOTczXkEyXkFqcGdeQXVyNTA2NTI0MTY@._V1_SX300.jpg',
+  },
+  {
+    Title: 'The Lego Batman Movie',
+    Year: '2017',
+    imdbID: 'tt4116284',
+    Type: 'movie',
+    Poster:
+      'https://m.media-amazon.com/images/M/MV5BMTcyNTEyOTY0M15BMl5BanBnXkFtZTgwOTAyNzU3MDI@._V1_SX300.jpg',
+  },
+  {
+    Title: 'Batman: Under the Red Hood',
+    Year: '2010',
+    imdbID: 'tt1569923',
+    Type: 'movie',
+    Poster:
+      'https://m.media-amazon.com/images/M/MV5BNmY4ZDZjY2UtOWFiYy00MjhjLThmMjctOTQ2NjYxZGRjYmNlL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg',
+  },
+  {
+    Title: 'Batman: The Dark Knight Returns, Part 1',
+    Year: '2012',
+    imdbID: 'tt2313197',
+    Type: 'movie',
+    Poster:
+      'https://m.media-amazon.com/images/M/MV5BMzIxMDkxNDM2M15BMl5BanBnXkFtZTcwMDA5ODY1OQ@@._V1_SX300.jpg',
+  },
+  {
+    Title: 'Batman: The Killing Joke',
+    Year: '2016',
+    imdbID: 'tt4853102',
+    Type: 'movie',
+    Poster:
+      'https://m.media-amazon.com/images/M/MV5BMTdjZTliODYtNWExMi00NjQ1LWIzN2MtN2Q5NTg5NTk3NzliL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg',
+  },
+  {
+    Title: 'Press 1 for Tamil',
+    Year: '2015',
+    imdbID: 'tt3982482',
+    Type: 'movie',
+    Poster:
+      'https://m.media-amazon.com/images/M/MV5BMDBhNDBjMTUtZDNhNC00N2NlLTg4NDgtMWEzOGI3NDk1OGI5XkEyXkFqcGdeQXVyNjU2NzAzMzA@._V1_SX300.jpg',
+  },
+  {
+    Title: 'The Border Tamil',
+    Year: '2017',
+    imdbID: 'tt7474950',
+    Type: 'movie',
+    Poster:
+      'https://m.media-amazon.com/images/M/MV5BMzI3NDI0OTktODI1OS00MjZjLTkzMjgtMzMwODU3NDYwNmI3XkEyXkFqcGdeQXVyNDg0NTc0NjY@._V1_SX300.jpg',
+  },
+  {
+    Title: 'Tamil Ellam',
+    Year: '2009',
+    imdbID: 'tt1819683',
+    Type: 'movie',
+    Poster: 'N/A',
+  },
+  {
+    Title: 'Tamil Ini',
+    Year: '2012',
+    imdbID: 'tt2771022',
+    Type: 'movie',
+    Poster: 'N/A',
+  },
+  {
+    Title:
+      'Original (Eng Subs): Dark Horizon - Part 1: Trash Pickup - A Tamil Short Film by Yahiya',
+    Year: '2015',
+    imdbID: 'tt5902724',
+    Type: 'movie',
+    Poster:
+      'https://m.media-amazon.com/images/M/MV5BZTUzNzBlY2QtMjU3OC00Yzc5LWFkYjgtYjU2Njc4MTU1ODBhXkEyXkFqcGdeQXVyNjgwNjM0Mzc@._V1_SX300.jpg',
+  },
+  {
+    Title: 'KO 2 (Tamil)',
+    Year: '2016',
+    imdbID: 'tt6205676',
+    Type: 'movie',
+    Poster: 'N/A',
+  },
+  {
+    Title: 'Discover Tamil Nadu: Come, Fall in Love',
+    Year: '2017',
+    imdbID: 'tt6535206',
+    Type: 'movie',
+    Poster:
+      'https://m.media-amazon.com/images/M/MV5BNmRkNGE2YTYtNWU5OS00NzgyLTkyNDYtMjYxYjQ1NmRmNDhmXkEyXkFqcGdeQXVyMjQ1NDg3NTg@._V1_SX300.jpg',
+  },
+  {
+    Title: 'The Roving Ambassador of Tamil',
+    Year: '2013',
+    imdbID: 'tt6928530',
+    Type: 'movie',
+    Poster: 'N/A',
+  },
+  {
+    Title: 'Think-Tamil Short Film',
+    Year: '2013',
+    imdbID: 'tt3196988',
+    Type: 'movie',
+    Poster: 'N/A',
+  },
+  {
+    Title: 'Zee Tamil Anthem',
+    Year: '2014',
+    imdbID: 'tt3733684',
+    Type: 'movie',
+    Poster: 'N/A',
+  },
 ];

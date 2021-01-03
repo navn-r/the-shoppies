@@ -4,15 +4,31 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { MovieCardComponent } from './components/movie-card/movie-card.component';
+import { InstructionsMessageComponent } from './components/instructions-message/instructions-message.component';
+import { MainPageComponent } from './pages/main-page/main-page.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { NominationsComponent } from './components/nominations/nominations.component';
+import { SuccessMessageComponent } from './components/success-message/success-message.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    SearchBarComponent,
+    MovieCardComponent,
+    InstructionsMessageComponent,
+    MainPageComponent,
+    NominationsComponent,
+    SuccessMessageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

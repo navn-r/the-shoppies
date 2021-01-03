@@ -95,6 +95,42 @@ app-instructions-message {
   background-color: rgba(179, 188, 245, 0.5);
 }
 
+.page-button:hover .tooltip {
+  visibility: visible;
+  filter: opacity(1);
+  transition: filter 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.tooltip::before {
+  position: absolute;
+  left: calc(50% - 1rem);
+  margin-top: -1.5rem;
+  z-index: 1;
+  height: 0.75rem;
+  width: 0.75rem;
+  background: var(--indigo-text);
+  content: "";
+  clip-path: polygon(0 0, 0 100%, 100% 0);
+  transform: translateX(90%) translateY(0.75rem) rotate(45deg) translateZ(5rem);
+}
+
+.tooltip {
+  visibility: hidden;
+  background-color: var(--indigo-text);
+  color: white;
+  text-align: center;
+  font-size: 0.875rem;
+  font-family: var(--movie-text);
+  position: absolute;
+  z-index: 3;
+  padding: 0.5rem;
+  border-radius: 10px;
+  filter: opacity(0);
+  min-width: 3rem;
+  user-select: none;
+  transform: translateY(3rem);
+}
+
 
 @media (max-width: 1200px) {
   .main-container {

@@ -1,8 +1,9 @@
 <div class="nominations-container">
   <div class="title-container">
     <h5 class="title">Your nominations <span class="length">({{nominations.length}}/5)</span></h5>
+    <button (click)="onToggle()" class="toggle-display" [ngClass]="{'minimized' : !isExpanded}"><img src="../../../assets/icons/ChevronUpMinor.svg" alt=""></button>
   </div>
-  <div class="nominations-outer">
+  <div class="nominations-outer" [ngClass]="{'minimized-nominations': !isExpanded}">
     <div class="nominations" [ngClass]="{'empty': !nominations.length}">
       <div id="no-nominations" *ngIf="!nominations.length">
         <img src="../../../assets/icons/HintMajor.svg" alt="" />

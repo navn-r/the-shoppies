@@ -16,10 +16,16 @@ export class NominationsComponent implements OnInit {
   @Output()
   onRemoveNomination: EventEmitter<string> = new EventEmitter();
 
+  isExpanded: boolean = true;
+
   ngOnInit(): void {
   }
 
   onRemove($event: Movie): void {
     this.onRemoveNomination.emit($event.imdbID);
+  }
+
+  onToggle(): void {
+    this.isExpanded = !this.isExpanded;
   }
 }

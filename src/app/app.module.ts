@@ -11,6 +11,7 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NominationsComponent } from './components/nominations/nominations.component';
+import { SuccessMessageComponent } from './components/success-message/success-message.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NominationsComponent } from './components/nominations/nominations.compo
     MovieCardComponent,
     InstructionsMessageComponent,
     MainPageComponent,
-    NominationsComponent
+    NominationsComponent,
+    SuccessMessageComponent
   ],
   imports: [
     BrowserModule,

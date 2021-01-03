@@ -13,7 +13,9 @@ export class MainPageComponent implements OnInit {
   searchResults: SearchResult | null = null;
   searchQuery: string = '';
 
-  // shouldShowInstructions: boolean = false;
+  // Choosing to proceed without this message panel, but in case I decide to re-style it,
+  // I'm not deleting the source files
+  shouldShowInstructions: boolean = false;
 
   loading: boolean = false;
 
@@ -24,9 +26,9 @@ export class MainPageComponent implements OnInit {
     // (window as any).nominations = this.nominations;
   }
 
-  // onClose(): void {
-  //   this.shouldShowInstructions = false;
-  // }
+  onClose(): void {
+    this.shouldShowInstructions = false;
+  }
 
   async onSearch($event: any): Promise<void> {
     this.loading = true;

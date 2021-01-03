@@ -82,16 +82,17 @@ table {
   --indigo-text: #3E4155;
   --sky: #DFE3E8;
   --lighter: #637381;
+  --lighter-green: #E3F1DF;
 
 
   /* FONT VARS */
   --logo: "Myriad Pro Bold SemiCondensed Italic";
-  --title: "Comic Sans MS";
   --text: "Shopify Sans Web Medium";
   --movie-text: 'Myriad Pro Semibold SemiCondensed';
   --movie-year: "Myriad Pro SemiCondensed";
   --myriad-pro-regular: 'Myriad Pro Regular';
   --light: "Myriad Pro Light";
+  --semibold: "Myriad Pro Semibold";
 
   /* SIZING VARS */
 }

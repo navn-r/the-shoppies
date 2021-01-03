@@ -1,7 +1,9 @@
 <div class="nominations-container">
   <div class="title-container">
-    <h5 class="title">Your nominations <span class="length">({{nominations.length}}/5)</span></h5>
-    <button (click)="onToggle()" class="toggle-display" [ngClass]="{'minimized' : !isExpanded}"><img src="../../../assets/icons/ChevronUpMinor.svg" alt=""></button>
+    <h5 class="title">Your nominations <span *ngIf="nominations.length && nominations.length < 5" class="length">({{nominations.length}}/5)</span></h5>
+    <button (click)="onToggle()" class="toggle-display" [ngClass]="{'minimized' : !isExpanded}">
+      <div class="tooltip">{{ isExpanded ? "Min" : "Max"}}imize</div>
+      <img src="../../../assets/icons/ChevronUpMinor.svg" alt=""></button>
   </div>
   <div class="nominations-outer" [ngClass]="{'minimized-nominations': !isExpanded}">
     <div class="nominations" [ngClass]="{'empty': !nominations.length}">
@@ -11,7 +13,7 @@
         <h6>try adding a movie</h6>
       </div>
       <div class="nomination" *ngFor="let movie of nominations">
-        <div class="movie-title">
+        <div class="movie-title" [title]="movie.Title + '&nbsp;(' + movie.Year + ')'">
           <h5>{{movie.Title}}</h5>
           <h6>({{movie.Year}})</h6>
         </div>
@@ -24,4 +26,5 @@
       </div>
     </div>
   </div>
+  <app-success-message *ngIf="nominations.length === 5"></app-success-message>
 </div>

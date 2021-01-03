@@ -30,7 +30,7 @@
   background-color: rgba(179, 188, 245, 0.5);
 }
 
-.minimized {
+.minimized img {
   transform: rotate(180deg);
 }
 
@@ -119,7 +119,7 @@
 
 #no-nominations h5 {
   font-size: 1.25rem;
-  font-family: "Myriad Pro Semibold";
+  font-family: var(--semibold);
   margin-top: 1rem;
 }
 
@@ -141,7 +141,7 @@
   background-color: rgba(179, 188, 245, 0.5);
 }
 
-.movie-button:hover .tooltip {
+.movie-button:hover .tooltip, .toggle-display:hover .tooltip {
   visibility: visible;
   filter: opacity(1);
   transition: filter 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -156,6 +156,7 @@
   width: 0.75rem;
   background: var(--indigo-text);
   content: "";
+  clip-path: polygon(0 0, 100% 100%, 100% 0);
   transform: translateX(2.6rem) translateY(1.65rem) rotate(45deg)
     translateZ(5rem);
 }

@@ -1,5 +1,9 @@
 <div class="main-container">
   <div class="left">
+    <app-instructions-message
+      *ngIf="shouldShowInstructions"
+      (onClose)="onClose()"
+    ></app-instructions-message>
     <app-search-bar
       [loading]="loading"
       (onSearch)="onSearch($event)"
@@ -8,11 +12,21 @@
       class="results-text"
       *ngIf="searchQuery && searchResults && searchResults.totalResults"
     >
-      Found <strong>{{ searchResults.totalResults }}</strong> results for <strong>"{{ searchQuery }}"</strong>
+      Found <strong>{{ searchResults.totalResults }}</strong> results for
+      <strong>"{{ searchQuery }}"</strong>
     </h5>
-    <h5 class="results-text" *ngIf="searchResults && searchResults.Response === 'False'" [ngSwitch]="searchResults.Error">
-      <span *ngSwitchCase="'Movie not found!'">No results found for <strong>"{{ searchQuery }}"</strong></span>
-      <span *ngSwitchDefault> <strong>Error:</strong> "{{searchResults.Error}}" for <strong>"{{ searchQuery }}"</strong></span>
+    <h5
+      class="results-text"
+      *ngIf="searchResults && searchResults.Response === 'False'"
+      [ngSwitch]="searchResults.Error"
+    >
+      <span *ngSwitchCase="'Movie not found!'"
+        >No results found for <strong>"{{ searchQuery }}"</strong></span
+      >
+      <span *ngSwitchDefault>
+        <strong>Error:</strong> "{{ searchResults.Error }}" for
+        <strong>"{{ searchQuery }}"</strong></span
+      >
     </h5>
     <div class="search-results" *ngIf="searchResults && searchResults.Search">
       <app-movie-card
@@ -29,8 +43,3 @@
     (onRemoveNomination)="onRemoveNomination($event)"
   ></app-nominations>
 </div>
-
-<!-- <app-instructions-message
-    *ngIf="shouldShowInstructions"
-    (onClose)="onClose()"
-  ></app-instructions-message> -->

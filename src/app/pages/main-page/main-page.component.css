@@ -25,6 +25,33 @@ app-instructions-message {
   gap: 5rem 2rem;
 }
 
+.search-message {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-message img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.search-message h5 {
+  font-size: 1.25rem;
+  font-family: var(--semibold);
+  margin-top: 1rem;
+}
+
+.search-message h6 {
+  font-size: 1.125rem;
+  margin-top: 0.25rem;
+  font-family: var(--myriad-pro-regular);
+  color: var(--lighter);
+}
+
+
 @media (max-width: 1200px) {
   .main-container {
     grid-template-columns: 1fr 1fr;

@@ -96,7 +96,7 @@ export class MainPageComponent implements OnInit {
       Year,
     }));
     this.movieService.setNominations(this.nominations);
-    // change url to '/' when developing
-    window.history.pushState({}, document.title, '/the-shoppies/');
+    // change url to '/nominate' when developing
+    window.history.pushState({}, document.title, '/the-shoppies/nominate/');
   }
 }

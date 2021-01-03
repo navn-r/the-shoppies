@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ClipboardModule } from 'ngx-clipboard';
 import { NominationsComponent } from './components/nominations/nominations.component';
 import { SuccessMessageComponent } from './components/success-message/success-message.component';
+import { AboutPageComponent } from './pages/about-page/about-page.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SuccessMessageComponent } from './components/success-message/success-me
     InstructionsMessageComponent,
     MainPageComponent,
     NominationsComponent,
-    SuccessMessageComponent
+    SuccessMessageComponent,
+    AboutPageComponent
   ],
   imports: [
     BrowserModule,

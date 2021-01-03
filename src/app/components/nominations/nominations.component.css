@@ -16,7 +16,8 @@
   background-color: white;
   border-radius: 10px;
   padding: 1.5rem;
-  box-shadow: 0 0.5rem 3rem rgba(0,0,0,.09), 0 0.15rem 0.5rem rgba(0,0,0,.085);
+  box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.09),
+    0 0.15rem 0.5rem rgba(0, 0, 0, 0.085);
 }
 
 .nominations {
@@ -71,6 +72,40 @@
   height: 1.25rem;
 }
 
+#no-nominations {
+  background-color: var(--sky);
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#no-nominations img {
+  width: 3rem;
+  height: 3rem;
+}
+
+#no-nominations h5 {
+  font-size: 1.25rem;
+  font-family: "Myriad Pro Semibold";
+  margin-top: 1rem;
+}
+
+#no-nominations h6 {
+  font-size: 1.125rem;
+  margin-top: 0.25rem;
+  font-family: var(--myriad-pro-regular);
+  color: var(--lighter);
+}
+
+
+.empty {
+  grid-template-rows: auto;
+}
+
 .movie-button:hover button {
   cursor: pointer;
   transition: background-color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -92,7 +127,8 @@
   width: 0.75rem;
   background: var(--indigo-text);
   content: "";
-  transform: translateX(2.6rem) translateY(1.65rem) rotate(45deg) translateZ(5rem);
+  transform: translateX(2.6rem) translateY(1.65rem) rotate(45deg)
+    translateZ(5rem);
 }
 
 .tooltip {
@@ -113,16 +149,22 @@
 }
 
 .length {
-  font-family: "Myriad Pro Light";
+  font-family: var(--light);
   font-size: 1.75rem;
 }
 
-@media(max-width: 1100px) {
+@media (max-width: 1100px) {
   .title {
     font-size: 1.75rem;
   }
 
+  #no-nominations {
+    height: 10rem;
+  }
+
   .nominations {
+    grid-template-rows: auto;
+    min-height: initial;
     margin-top: 0.5rem;
   }
 }

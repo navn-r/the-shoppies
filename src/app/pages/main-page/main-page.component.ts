@@ -16,7 +16,7 @@ export class MainPageComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe(async (params) => {
       const nominations = params[`n`];
       if (nominations && nominations.length) {
-        await this.fetchNominations(nominations.split(' '));
+        await this.fetchNominations(nominations);
       }
     });
   }
@@ -96,6 +96,7 @@ export class MainPageComponent implements OnInit {
       Year,
     }));
     this.movieService.setNominations(this.nominations);
+    // change url to '/' when developing
     window.history.pushState({}, document.title, '/the-shoppies/');
   }
 }

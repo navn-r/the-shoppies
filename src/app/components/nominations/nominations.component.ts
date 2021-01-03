@@ -48,7 +48,7 @@ export class NominationsComponent implements OnInit {
       this.clipboardService.copyFromContent(
         `${location.origin}/the-shoppies/?n=${this.nominations
           .map((n) => n.imdbID)
-          .join(' ')}`
+          .join('&n=')}`
       )
     ) {
       this.showMessage('link copied to clipboard');

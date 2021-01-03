@@ -14,21 +14,22 @@ export class MainPageComponent implements OnInit {
     private activatedRoute: ActivatedRoute
   ) {
     this.activatedRoute.queryParams.subscribe(async (params) => {
-      const nominations = params['n'];
-      if (nominations && nominations.length)
+      const nominations = params[`n`];
+      if (nominations && nominations.length) {
         await this.fetchNominations(nominations.split(' '));
+      }
     });
   }
 
   searchResults: SearchResult | null = null;
-  searchQuery: string = '';
-  currentPage: number = 1;
+  searchQuery = '';
+  currentPage = 1;
 
   // Choosing to proceed without this message panel, but in case I decide to re-style it,
   // I'm not deleting the source implementation
-  shouldShowInstructions: boolean = false;
+  shouldShowInstructions = false;
 
-  loading: boolean = false;
+  loading = false;
 
   nominations: Movie[] = [];
 
@@ -41,7 +42,7 @@ export class MainPageComponent implements OnInit {
   }
 
   async onChangePage(pageNum: number): Promise<void> {
-    if(pageNum > 0) {
+    if (pageNum > 0) {
       this.currentPage = pageNum;
       return await this.onSearch(this.searchQuery, pageNum);
     }
@@ -49,8 +50,9 @@ export class MainPageComponent implements OnInit {
 
   async onSearch($event: any, pageNum?: number): Promise<void> {
     this.loading = true;
-    if(this.searchQuery !== $event)
+    if (this.searchQuery !== $event) {
       this.currentPage = 1;
+    }
     this.searchResults = !$event.trim().length
       ? null
       : await this.movieService.search($event.trim(), pageNum);

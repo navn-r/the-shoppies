@@ -80,6 +80,6 @@ export class MainPageComponent implements OnInit {
       Year,
     }));
     this.movieService.setNominations(this.nominations);
-    window.history.pushState({}, document.title, '/');
+    window.history.pushState({}, document.title, '/the-shoppies/');
   }
 }

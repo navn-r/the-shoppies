@@ -59,7 +59,7 @@ As the title suggests, the following features were not *mandatory* per say, but 
 ## Built using...
 
 - **Angular 10** for main development (HTML/CSS/TS)
-  - Purposefully built without a component library and chose to style all components from scratch. Big pain but well worth the effort imo
+  - Purposefully built without a component library and chose to style all components from scratch. **_Big pain_** but well worth the effort in my opinion
   
 - **TravisCI** for continuous deployment [![Build Status](https://travis-ci.com/navn-r/the-shoppies.svg?token=Ct2fJ4682aaQJwkdoPri&branch=src)](https://travis-ci.com/navn-r/the-shoppies)
   - Thankfully I already did a small [project](https://github.com/navn-r/gh-search) trying to learn Angular with gh-pages for hosting, so it was almost trivial to adapt that config file for this project
@@ -106,19 +106,6 @@ As mentioned earlier in this long readme, this application is deployed at https:
 
 With that being said, I give you, **_screenshots_** (`docs/images/**.png`)
 
-<span>
-<img src="docs/images/landing600.png" width="270" align="left"/>
-<img src="docs/images/app-empty600.png" width="270" align="left"/>
-<img src="docs/images/app-full600.png" width="270" align="left"/>
-</span>
-
-<br />
-
-<!-- <h5 align="center"><em>landing (left) and empty main pages (right) (600x1080)</em></h5> -->
-
-<br />
-
-
 <img src="docs/images/app-empty1920.png" />
 <h5 align="center"><em>main page with 0 nominations and no search results (1920x1080)</em></h5>
 
@@ -126,3 +113,38 @@ With that being said, I give you, **_screenshots_** (`docs/images/**.png`)
 
 <img src="docs/images/app-full1920.png" />
 <h5 align="center"><em>main page with 5 nominations and search results (1920x1080)</em></h5>
+
+<br />
+
+<span>
+<img src="docs/images/landing600.png" width="250" align="left"/>
+<img src="docs/images/app-empty600.png" width="250" align="left"/>
+<img src="docs/images/app-full600.png" width="250" align="left"/>
+</span>
+
+<br />
+
+<h5 align="center"><em>landing (left), empty (center) and full (right) main pages (600x1080)</em></h5>
+
+---
+
+### Getting Started
+
+- Clone the repo and run `npm ci` or `npm i` to install dependencies  
+
+- I've created a `.env.example` for you to rename and replace with your OMDb API key (or just steal mine from browser console 😎)  
+ 
+- The following commands are available for use
+    ```sh
+    # Start development server
+    npm run start
+    
+    # Create production build
+    npm run build.prod
+    ```
+
+<br />
+
+### License
+
+[MIT License](LICENSE)

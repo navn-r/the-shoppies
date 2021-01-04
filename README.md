@@ -107,9 +107,9 @@ As mentioned earlier in this long readme, this application is deployed at https:
 With that being said, I give you, **_screenshots_** (`docs/images/**.png`)
 
 <span>
-<img src="docs/images/landing600.png" width="275" align="left"/>
-<img src="docs/images/app-empty600.png" width="275" align="left"/>
-<img src="docs/images/app-full600.png" width="275" align="left"/>
+<img src="docs/images/landing600.png" width="270" align="left"/>
+<img src="docs/images/app-empty600.png" width="270" align="left"/>
+<img src="docs/images/app-full600.png" width="270" align="left"/>
 </span>
 
 <br />

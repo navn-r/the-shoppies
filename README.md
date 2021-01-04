@@ -2,6 +2,10 @@
 
 <h2 align="center"><strong>the shoppies</strong> 🎥🍿</h2>
 <h3 align="center">movie awards for entrepreneurs</h5>
+<h5 align="center">
+  <a href="https://wakatime.com/badge/github/navn-r/the-shoppies.svg"><img src="https://wakatime.com/badge/github/navn-r/the-shoppies.svg" /></a>
+  <a href="https://travis-ci.com/navn-r/the-shoppies"><img src="https://travis-ci.com/navn-r/the-shoppies.svg?token=Ct2fJ4682aaQJwkdoPri&branch=src" /></a>
+</h5>
 
 ---
 
@@ -61,7 +65,7 @@ As the title suggests, the following features were not *mandatory* per say, but 
 - **Angular 10** for main development (HTML/CSS/TS)
   - Purposefully built without a component library and chose to style all components from scratch. **_Big pain_** but well worth the effort in my opinion
   
-- **TravisCI** for continuous deployment [![Build Status](https://travis-ci.com/navn-r/the-shoppies.svg?token=Ct2fJ4682aaQJwkdoPri&branch=src)](https://travis-ci.com/navn-r/the-shoppies)
+- **TravisCI** for continuous deployment  
   - Thankfully I already did a small [project](https://github.com/navn-r/gh-search) trying to learn Angular with gh-pages for hosting, so it was almost trivial to adapt that config file for this project
   
 - **Github Pages** for hosting
@@ -70,7 +74,7 @@ As the title suggests, the following features were not *mandatory* per say, but 
   - [These notes on color](https://polaris.shopify.com/design/colors#navigation) really motivated/inspired my design, box shadow on the application was also taken from those notes as well
   - *Fun fact*, my design for the movie card component was mainly inspired by this picture I found on the Polaris Design notes
 
-  <img align="center" width="500" src="docs/images/polariscard.png">
+  <h5 align="center"><img align="center" width="500" src="docs/images/polariscard.png"></h5>
   <h5 align="center"><em>https://polaris.shopify.com/bundles/2e0413ee61864d069098ae8ef0f6fdef.png</em></h5>
 
 <br />
@@ -116,13 +120,15 @@ With that being said, I give you, **_screenshots_** (`docs/images/**.png`)
 
 <br />
 
-<span>
-<img src="docs/images/landing600.png" width="250" align="left"/>
-<img src="docs/images/app-empty600.png" width="250" align="left"/>
-<img src="docs/images/app-full600.png" width="250" align="left"/>
-</span>
+<h5 align="center">
+<img src="docs/images/landing600.png" width="255" align="left"/>
+<img src="docs/images/app-empty600.png" width="255" align="left"/>
+<img src="docs/images/app-full600.png" width="255" align="left"/>
+</h5>
 
 <br />
+<br />
+
 
 <h5 align="center"><em>landing (left), empty (center) and full (right) main pages (600x1080)</em></h5>
 

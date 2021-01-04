@@ -107,13 +107,14 @@ As mentioned earlier in this long readme, this application is deployed at https:
 With that being said, I give you, **_screenshots_** (`docs/images/**.png`)
 
 <span>
-<img src="docs/images/landing600.png" width="300" align="left"/>
-<img src="docs/images/app-empty600.png" width="300" align="right"/>
+<img src="docs/images/landing600.png" width="250" align="left"/>
+<img src="docs/images/app-empty600.png" width="250" align="left"/>
+<img src="docs/images/app-full600.png" width="250" align="left"/>
 </span>
 
 <br />
 
-<h5 align="center"><em>landing (left) and empty main pages (right) (600x1080)</em></h5>
+<!-- <h5 align="center"><em>landing (left) and empty main pages (right) (600x1080)</em></h5> -->
 
 <br />
 

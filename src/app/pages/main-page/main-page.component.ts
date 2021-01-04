@@ -16,7 +16,7 @@ export class MainPageComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe(async (params) => {
       const nominations = params[`n`];
       if (nominations && nominations.length) {
-        await this.fetchNominations(nominations);
+        await this.fetchNominations(nominations.slice(0,5));
       }
     });
   }

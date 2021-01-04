@@ -102,13 +102,13 @@ As the title suggests, the following features were not *mandatory* per say, but 
 
 ## Closing Notes & Screenshots
 
-As mentioned earlier in this long readme, this application is deployed at https://navn.me/the-shoppies for everyone to try and use. I have also made the project board public, so check there for any new features being developed for this project. With that being said, thank you for making it this far 💯.
+As mentioned earlier in this long readme, this application is deployed at https://navn.me/the-shoppies for everyone to try and use. I have also made the project board public, so check there for any new features being developed for this project. Thank you for making it this far 💯.
 
 With that being said, I give you, **_screenshots_** (`docs/images/**.png`)
 
 <span>
-<img src="docs/images/landing600.png" width="600" align="left"/>
-<img src="docs/images/app-empty600.png" width="600" align="right"/>
+<img src="docs/images/landing600.png" width="300" align="left"/>
+<img src="docs/images/app-empty600.png" width="300" align="right"/>
 </span>
 
 <br />

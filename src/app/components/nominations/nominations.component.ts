@@ -46,7 +46,7 @@ export class NominationsComponent implements OnInit {
   onPressShare(): void {
     if (
       this.clipboardService.copyFromContent(
-        `${location.origin}/the-shoppies/?n=${this.nominations
+        `${location.origin}/the-shoppies/nominate/?n=${this.nominations
           .map((n) => n.imdbID)
           .join('&n=')}`
       )

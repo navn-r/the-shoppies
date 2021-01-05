@@ -4,5 +4,9 @@
     </div>
     <div class="bottom">
       <h5 class="logo-text">by shopify</h5>
+      <button class="back-button" (click)="onPressReturn()" *ngIf="shouldBackButtonShow()">
+        <div class="tooltip">Return</div>
+        <img src="../../../assets/icons/LogOutMinor.svg" alt="">
+      </button>
     </div>
 </div>

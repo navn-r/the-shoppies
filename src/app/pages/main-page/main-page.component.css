@@ -10,8 +10,8 @@
   margin-top: 2rem;
   font-family: var(--myriad-pro-regular);
   font-size: 1.125rem;
-  display: grid;
-  grid-template-columns: auto 10rem;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   padding-right: 2rem;
 }
@@ -68,6 +68,7 @@ app-instructions-message {
   align-items: center;
   justify-content: space-between;
   user-select: none;
+  width: 16rem;
 }
 
 .page-button {
@@ -131,11 +132,24 @@ app-instructions-message {
   transform: translateY(3rem);
 }
 
-
 @media (max-width: 1200px) {
   .main-container {
     grid-template-columns: 1fr 1fr;
     gap: 0;
+  }
+
+  .results-text {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .results-text h5 {
+    width: 100%;
+  }
+
+  .page-buttons {
+    width: 20rem;
+    margin-top: 0.5rem;
   }
 }
 

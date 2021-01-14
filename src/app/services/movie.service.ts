@@ -7,7 +7,7 @@ import { SearchResult, Movie, FullMovie } from '../models/api.model';
   providedIn: 'root',
 })
 export class MovieService {
-  BASE_URL = `http://www.omdbapi.com/?apikey=${environment.OMDB_API_KEY}&type=movie`;
+  BASE_URL = `https://www.omdbapi.com/?apikey=${environment.OMDB_API_KEY}&type=movie`;
 
   nominations: Movie[] = JSON.parse(
     localStorage.getItem('nominations') || '[]'
